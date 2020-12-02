@@ -13,14 +13,12 @@ in {
     hardware.opengl.extraPackages = with pkgs; [
         rocm-opencl-icd
         rocm-opencl-runtime
+        amdvlk
     ];
     hardware.opengl.driSupport = true;
     hardware.opengl.driSupport32Bit = true;
 
     services.xserver.videoDrivers = [ "amdgpu" ];
-    hardware.opengl.extraPackages = with pkgs; [
-        amdvlk
-    ];
 
 
     # environment.systemPackages = with pkgs; [
